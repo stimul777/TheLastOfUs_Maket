@@ -1,0 +1,7 @@
+@import "~normalize.css";
+
+.container {
+    padding-top: 5em;
+    background-color: green;
+    color: red;
+}

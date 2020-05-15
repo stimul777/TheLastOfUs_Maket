@@ -5,4 +5,4 @@ function getClicks () {
     click = click++;
     
 }
-console.log(`клики: ${click}`);
+console.log(`кликиииииииииииии: ${click}`);
