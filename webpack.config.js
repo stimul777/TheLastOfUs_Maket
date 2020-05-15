@@ -2,7 +2,7 @@
 const path = require('path');
 // Модуль для работы с хтмл(преобразует подключения)
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-// Модуль очистки мусора из прода
+// Модуль очистки мусора 
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 // Модуль для копирования 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -27,6 +27,28 @@ const optimization = () => {
         ];
     }
 }
+// добавляем хеши в конец
+const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
+
+// Лоадер стили
+const cssLoaders = extra => {
+    const loaders = [
+    {
+        loader: MiniCssExtractPlugin.loader,
+        options: {
+           hmr: isDev,
+           reloadAll: true 
+        }
+    },
+    'css-loader'
+    ]
+
+    if (extra) {
+        loaders.push(extra);
+    }
+    return loaders;
+}
+
 
 module.exports = {
     // папка входа
@@ -35,14 +57,14 @@ module.exports = {
     mode: 'development',
     // Указываем файлы входа
     entry: {
-        main: './index.js',
+        main: ['@babel/polyfill','./index.js'],
         analytics: './analytics.js'
     },
     // Указываем куда собрать все файлы (наш бандл)
     output: {
         // name нужен, если бандлов будет несколько
-        // contenthash нужен, чтобы название файла менялось( так он не кешируется у клиента)
-        filename: '[name].[contenthash].js',
+        // hash нужен, чтобы название файла менялось( так он не кешируется у клиента)
+        filename: filename('js'),
         path: path.resolve(__dirname, 'dist')
     }, 
     resolve: {
@@ -80,56 +102,50 @@ module.exports = {
         ]),
         new MiniCssExtractPlugin(
             {
-                filename: '[name].[contenthash].css',
+                filename: filename('css'),
             }
         )
     ],
     module: {
         rules: [
-            {
                 //копирование стилей
+            {
                 test: /\.css$/,
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                           hmr: isDev,
-                           reloadAll: true 
-                        }
-                    },
-                    'css-loader'
-                ]
+                use: cssLoaders()
             },
-            {
                 //препроцессор LESS
-                test: /\.less$/,
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                           hmr: isDev,
-                           reloadAll: true 
-                        }
-                    },
-                    'css-loader',
-                    'less-loader'
-                ]
-            },
             {
-                //подключение загрузки изображений
+                test: /\.less$/,
+                use: cssLoaders('less-loader')
+            },
+               //подключение загрузки изображений
+            {
                 test: /\.(png|jpg|svg|gif)$/,
                 use: ['file-loader']
             },
-            {
                 //обработка шрифтов (например, импорт из css другого css (без этого конфига вебпак не даст стандартно импортировать))
+            {
                 test: /\.(ttf|woff|woff2|eot)$/,
                 use: ['file-loader']
             },
+               //xml
             {
-                //xml
                 test: /\.xml$/,
                 use: ['xml-loader']
             },
+                // Babel
+            {
+                test: /\.js$/, 
+                exclude: /node_modules/, 
+                loader: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            "@babel/preset-env"
+                        ]
+                    }
+                } 
+            }   
         ]
     }
 }
