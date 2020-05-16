@@ -1,33 +1,37 @@
+@text-color: rgb(213, 236, 150);
+
+
 .header {
-    min-width: 100%;
-    height: 700px;
     background-image: url(/src/blocks/header/img/background.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: 100%;
     
     .header__wrapper-menu {
+        .wrapper-full();
         display: flex;
         justify-content: space-between;
 
         .logo-games {
             width: 60px;
             height: 60px;
-            
        }
     
         .navigation {
             min-width: 30%;
             font-size: 20px;
-            font-family: 'HeadlinerNo.45';
-            color: white;
-            border: 1px solid black;
+            font-family: 'BIRTH_OF_A_HERO';
+            color: @text-color;
+            // border: 1px solid white;
     
             .navigation__list {
                 display: flex;
-                justify-content: space-around;
+                justify-content: space-between;
                 flex-wrap: wrap;
                 list-style-type: none;
-                border: 1px solid black;
+                margin-left: 0; 
+                padding-left: 0;
+                // border: 1px solid white;
 
                 .navigation__list-item {
                     margin-left: 2%;
@@ -36,53 +40,88 @@
                 .navigation__list-item:nth-child(1) {
                     margin-left: 0;
                 }
+
+                .navigation__list-item:hover {
+                    cursor: pointer;
+                }
             }
         }
 
         .language {
             display: flex;
+            font-family: 'BIRTH_OF_A_HERO';
+            color: @text-color;
 
-            .language__menu {
-                padding: 5%;
+            .language__checkpoint {
+                margin-top: 20px;
+                font-size: 20px;
+                text-decoration: none;
+                color: @text-color;
+                letter-spacing: 0.1em;
+            }
+
+            .line {
+                 margin: 10px;
+                 width: 1px;
+                 height: 50px; 
+                 background-color: white;
             }
 
             .logo-ps4 {
-                width:50px;
-                height: 50px;
+                // border: 1px solid white;
+                width: 70px;
+                height: 70px;
             }
         }
-
     }
     
    .header__wrapper-buy {
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: center;
+        .wrapper-full();
+        letter-spacing: 0.1em;
         font-size: 30px;
-        font-family: 'HeadlinerNo.45';
-        border: 1px solid black;
-        color: white;
+        // border: 1px solid white;
+        color: rgb(213, 236, 150);
         
 
        .header__get-game {
            display: flex;
-           justify-content: center; 
-        //    flex-direction: column;
-        //    min-width: 80%;
-        //    margin: 0 auto;
-            border: 1px solid black;
-            // min-width: 100%;
+           flex-direction: column;
+            margin: 0 auto;
+            text-align: center;
+            // border: 1px solid red;
 
             .header__get-game-btn {
-                width: 20%;
+                max-width: 60%;
+                // height: 70px;
+                text-align: center;
+                padding: 15px;
+                margin: 0 auto;
+                border: none;
+                letter-spacing: 0.1em;
             }
-       }
+
+            .header__get-game-btn:hover {
+               cursor: pointer;
+            }
+        }
 
        .down-arrow {
-           display: flex;
-           justify-content: center;
-           flex-direction: column;
-       }
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 10%;
+            margin: 0 auto;
+            margin-top: 10%;
+            // border: 1px solid pink;
+
+            .down-arrow__text {
+               text-align: center;
+               margin: 0;
+               padding-bottom: 3%;
+            }
+
+        }
+
 
    }
     

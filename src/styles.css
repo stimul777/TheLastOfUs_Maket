@@ -1,7 +1,15 @@
+body {
+    font-family: 'BIRTH_OF_A_HERO';
+    letter-spacing: 0.1em;
+}
+
+
+
 /* Сброс стандартных стилей */
 @import "~normalize.css";
 /* Подключение шрифтов */
 @import "fonts/fonts.css";
 
 /* Подключение блоков */
+@import "smart-grid.less";
 @import "blocks/header/header.less";
