@@ -40,7 +40,8 @@ const cssLoaders = extra => {
            reloadAll: true 
         }
     },
-    'css-loader'
+    'css-loader',
+    'less-loader'
     ]
 
     if (extra) {
@@ -55,7 +56,7 @@ module.exports = {
     context: path.resolve(__dirname, 'src'),
     // Режим сборки
     mode: 'development',
-    // Указываем файлы входа
+    // Указываем файлы входа js
     entry: {
         main: ['@babel/polyfill','./index.js'],
         analytics: './analytics.js'

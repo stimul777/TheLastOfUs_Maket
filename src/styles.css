@@ -1,5 +1,7 @@
+/* Сброс стандартных стилей */
 @import "~normalize.css";
+/* Подключение шрифтов */
+@import "fonts/fonts.css";
 
-.wrapper {
-    background-color: red;
-}
+/* Подключение блоков */
+@import "blocks/header/header.less";

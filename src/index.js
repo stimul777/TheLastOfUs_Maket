@@ -1,8 +1,11 @@
-import Post from './Post'
-import './style.less'
-// import './css/styles.css'
-// import xml from "путь до xml"
 
+// Подключение стилей
+import './styles.css'
+
+
+
+// import xml from "путь до xml"
+import Post from './Post'
 const post = new Post ('Webpack Post Title');
 console.log('Post to String:', post.toString())
 
