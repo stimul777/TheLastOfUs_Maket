@@ -13,3 +13,5 @@ body {
 /* Подключение блоков */
 @import "smart-grid.less";
 @import "blocks/header/header.less";
+@import "blocks/gallery/gallery.less";
+@import "blocks/game-features/game-features.less";
