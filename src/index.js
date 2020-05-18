@@ -1,6 +1,8 @@
-
 // Подключение стилей
 import './styles.css'
+
+// Подключение скриптов
+import './blocks/header/header.js'
 
 
 
