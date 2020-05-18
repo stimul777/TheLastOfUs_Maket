@@ -2,51 +2,34 @@ class Player {
     constructor () {
         this.sound = new Audio();
         this.sound.src = '/src/blocks/header/sounds/soundtrack.mp3';
-        this.soundOn = document.querySelector('.sound-icon-on');
-        
+        this.soundStatus = document.querySelector('.sound-icon-off');
+        this.switch = true;
         this.event();
     }
 
     event() {
-        this.soundOn.addEventListener('click', this.play);
+         this.soundStatus.addEventListener('click', ()=> {
+            if( this.switch) {
+                this.play();  
+            }else {
+                this.pause();
+                this.switch = true;
+            }
+         });   
     }
-    
+
     play() {
+        this.soundStatus.className ='sound-icon-on';
         this.sound.play();
+        this.switch = false;
     }
 
     pause() {
+        this.soundStatus.className ='sound-icon-off';
         this.sound.pause();
-        this.soundOn.classList.add('sound-icon-off');
+        this.switch = true;
     }
-
- 
-
 }
 
-
 new Player();
-// start.pause();l
-
-
-
-
-
-// let player = true;
-// document.querySelector('.sound-icon-on').addEventListener('click', () => {
-//     const sound = new Audio();
-//     sound.src = '/src/blocks/header/sounds/soundtrack.mp3';
-//     sound.play();
-
-//     if (player==false) {
-//         sound.pause();
-//     }
-  
-//         player = false;
-   
-   
-
-   
-       
-// });
 
