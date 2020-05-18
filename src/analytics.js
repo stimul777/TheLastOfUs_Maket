@@ -1,8 +1,8 @@
-let click = 0;
+// let click = 0;
 
-window.addEventListener('click', getClicks());
-function getClicks () {
-    click = click++;
+// window.addEventListener('click', getClicks());
+// function getClicks () {
+//     click = click++;
     
-}
-console.log(`кликииииииииeeeeeeddиииии: ${click}`);
+// }
+// console.log(`кликииииииииeeeeeeddиииии: ${click}`);
