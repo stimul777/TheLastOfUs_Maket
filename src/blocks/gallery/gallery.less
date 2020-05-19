@@ -1,5 +1,8 @@
+
+
 .gallery {
     background-color: rgba(1, 31, 10, 0.973);
+    color: white;
 
     .gallery-wrapper {
         .wrapper-full();
@@ -42,12 +45,21 @@
 
 
             .gallery-contaner-img {
+                display: none;
+                height: auto;
+                width: 100%;
+                max-width: 720px;
+            }
+
+            .gallery-contaner-img_activ {
+                display: block;
                 height: auto;
                 width: 100%;
                 max-width: 720px;
             }
 
             .gallery-switch__btn {
+                background-color: red;
                 margin-left: 2%;
             }
 

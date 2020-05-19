@@ -3,6 +3,7 @@ import './styles.css'
 
 // Подключение скриптов
 import './blocks/header/header.js'
+import './blocks/gallery/gallery.js'
 
 
 
