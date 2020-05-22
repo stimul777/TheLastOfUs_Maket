@@ -2,7 +2,7 @@
 @background-color-text: rgba(5, 5, 5, 0.377);
 
 .header {
-    background-image: url(/src/blocks/header/img/background.jpg);
+    background-image: url(/src/blocks/header/img/background-full.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 100%;
@@ -20,7 +20,6 @@
        }
     
         .navigation {
-            // ca
             min-width: 60%;
             font-size: 20px;
             font-family: 'BIRTH_OF_A_HERO';
@@ -189,7 +188,7 @@
         .wrapper-full();
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         height: 90vh;
         letter-spacing: 0.1em;
@@ -197,7 +196,6 @@
         
     
        .get-game {
-           margin-top: 10%;
             text-align: center;
             color: @text-color;
 
@@ -231,6 +229,8 @@
        .down-arrow {
             display: flex;
             flex-direction: column;
+            position: absolute;
+            bottom: 0;
             height: 10%;
             color: @text-color;
             border-radius: 20px;
@@ -238,7 +238,7 @@
 
             .down-arrow__btn {
                 border: none;
-                background-color: @background-color-text;
+                background-color:  rgba(0, 50, 50, 0.0);
                 color: @text-color;
                 margin: 0;
             }

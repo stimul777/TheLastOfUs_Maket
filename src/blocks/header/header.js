@@ -1,3 +1,8 @@
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("ДОМ ЗАГРУЖЕН");
+})
+
+
 class Player {
     constructor () {
         this.sound = new Audio();

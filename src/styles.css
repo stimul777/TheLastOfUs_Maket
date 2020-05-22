@@ -3,15 +3,19 @@ body {
     letter-spacing: 0.1em;
 }
 
-
-
 /* Сброс стандартных стилей */
 @import "~normalize.css";
+
 /* Подключение шрифтов */
 @import "fonts/fonts.css";
 
-/* Подключение блоков */
+/* Smart-grid */
 @import "smart-grid.less";
+
+/* Подключение блоков */
 @import "blocks/header/header.less";
+@import "blocks/header/adaptive/header-1024.less";
+@import "blocks/header/adaptive/header-360.less";
+
 @import "blocks/gallery/gallery.less";
 @import "blocks/game-features/game-features.less";
