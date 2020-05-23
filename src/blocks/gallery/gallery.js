@@ -2,42 +2,20 @@ class Slider {
     constructor () {
         this.button = document.querySelector('.gallery-switch__btn');
         this.imgCollections = [...document.querySelectorAll('.gallery-contaner-img')];
-        // this.imgCollections[0].style.display = "block";
-        console.log( this.imgCollections);
+        this.imgCollections[0].style.display = "block";
         this.btnClick();
     }
 
     btnClick() {
-        this.button.addEventListener('click', () => {
-
-           let result = this.imgCollections.map((item) => {
-                switch (item.style.display) {
-               
-                // case "block": item.style.display = "none";
-                case "none": item.style.display = "block";  
-              }
-
-           });         
-        })
-  
+        this.button.addEventListener('click', () => {  
+          this.imgCollections.forEach(element => {
+            element.style.display = "block" ? element.style.display = "none" : false;
+          });
+          this.arrItem = this.imgCollections.pop();
+          this.arrItem.style.display = "block";
+          this.imgCollections.unshift(this.arrItem);
+          });         
     }
-
 }
-
 new Slider();
 
-const arr = [
-    {name: " Yura", age: 26},
-    {name: "Vitya", age: 25},
-    {name: "Senya", age: 20},
-    {name: "Pasha", age: 21},
-    {name: "Gosha", age: 22}
-  ]
-  
-//   let array = arr.reduce((total, person) => {
-//     return total + person.age/arr.length
-//   },0)
-
-let array = arr.findIndex(person =>person.name == 'Pasha')
-
-  console.log(array)
