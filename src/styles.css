@@ -18,4 +18,9 @@ body {
 @import "blocks/header/adaptive/header-360.less";
 
 @import "blocks/gallery/gallery.less";
+@import "blocks/gallery/slider/slider.less";
+
+
 @import "blocks/game-features/game-features.less";
+
+@import "blocks/footer/footer.less";
