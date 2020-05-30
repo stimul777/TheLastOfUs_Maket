@@ -9,7 +9,7 @@
     min-height: 100vh;
 }
 
-    .header__wrapper-menu {
+   & .header__wrapper-menu {
         .wrapper-full();
         display: flex;
         justify-content: space-between;
@@ -73,6 +73,10 @@
                 letter-spacing: 0.1em;
             }
 
+            .language__checkpoint:hover {
+                cursor: pointer;
+            }
+
             .language-menu {
                 background-color: @background-color-text;
                 text-align: center;
@@ -81,7 +85,10 @@
                 .language__menu-item {
                     display: none;
                     list-style-type: none;
-                   
+                }
+
+                .language__menu-item:hover {
+                    cursor: pointer;
                 }
             }
 

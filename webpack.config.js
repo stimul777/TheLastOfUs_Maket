@@ -82,7 +82,10 @@ module.exports = {
         // Автообновление страницы браузера
     devServer: {
         port: 3000,
-        hot: isDev
+        // автообновление html
+        // contentBase: './src', 
+        // watchContentBase: true,
+        // hot: isDev
     },
 
     plugins: [

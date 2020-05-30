@@ -1,8 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-    console.log("ДОМ ЗАГРУЖЕН");
-})
-
-
+// audio player
 class Player {
     constructor () {
         this.sound = new Audio();
@@ -38,6 +34,24 @@ class Player {
         this.switch = true;
     }
 }
-
 new Player();
 
+// Language
+let switchLanguage = () => {
+    const languageMenuItem = [...document.querySelectorAll('.language__menu-item')];
+    const LanguageCheckpoint = document.querySelector('.language__checkpoint');
+    let LanguageOn = false;
+    console.log(LanguageCheckpoint.value);
+    
+    LanguageCheckpoint.addEventListener('click', () => {
+        if(LanguageOn == true) {
+            languageMenuItem.map(item => item.style.display = 'none');
+            LanguageOn = false;
+            }
+            else {
+                languageMenuItem.map(item => item.style.display = 'block');
+                LanguageOn = true;
+                }  
+        });
+}
+switchLanguage();
