@@ -11,8 +11,42 @@
         align-items: center;
 
         .container-contact-block__img {
-            max-width: 100%;
+            height: auto;
+            width: 100%;
+            max-width: 768px;
         }
+    }
+
+    .contact-form {
+        max-width: 100%;
+
+        .contact-form-email {
+
+            .contact-form-email__enter {
+                min-width: 200px;
+                height: 30px;
+                background-color: rgba(5, 5, 5, 0.377);
+                color: white;
+                border: 1px solid white;
+                border-radius: 5px;
+                text-align: center;
+            }
+
+            .contact-form-email__btn {
+                margin-top: 2%;
+                max-width: 260px;
+                height: 40px;
+                background-color: #d5ec96;      
+                border: none;     
+                border-radius: 5px;  
+                cursor: pointer;   
+            }
+        }
+    }
+
+    .contact-form-gif {
+        background-image: url(/src/blocks/footer/img/gif/no.gif);
+        background-repeat: no-repeat;
     }
 
     .footer-botoom {

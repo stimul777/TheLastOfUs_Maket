@@ -7,4 +7,7 @@ import './blocks/header/header.js'
     // gallery
 import './blocks/gallery/gallery.js'
 import './blocks/gallery/slider/slider.js'
+    //footer
+import './blocks/footer/footer.js'
+
 

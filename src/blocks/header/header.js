@@ -11,7 +11,7 @@ class Player {
 
     event() {
          this.soundStatus.addEventListener('click', ()=> {
-            if( this.switch) {
+            if(this.switch) {
                 this.play();  
             }else {
                 this.pause();
