@@ -40,18 +40,26 @@ new Player();
 let switchLanguage = () => {
     const languageMenuItem = [...document.querySelectorAll('.language__menu-item')];
     const LanguageCheckpoint = document.querySelector('.language__checkpoint');
+    let languageСheckpoint =  document.querySelector('.language__checkpoint');
     let LanguageOn = false;
-    console.log(LanguageCheckpoint.value);
-    
+
     LanguageCheckpoint.addEventListener('click', () => {
         if(LanguageOn == true) {
             languageMenuItem.map(item => item.style.display = 'none');
             LanguageOn = false;
-            }
-            else {
+        } 
+        else {
                 languageMenuItem.map(item => item.style.display = 'block');
                 LanguageOn = true;
-                }  
-        });
+        }  
+    });
+
+    languageMenuItem.map(item => item.addEventListener('click', () => {
+        LanguageOn = false;
+        languageСheckpoint.innerHTML = item.innerHTML;
+        languageMenuItem.map(item => item.style.display = 'none');
+       
+    }))
+
 }
 switchLanguage();
