@@ -16,6 +16,8 @@ class Slider {
           this.imgCollections.unshift(this.arrItem);
           });         
     }
+
+
 }
 new Slider();
 

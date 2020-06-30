@@ -5,6 +5,7 @@ class Player {
         this.sound.src = '/src/blocks/header/sounds/soundtrack.mp3';
         this.soundStatus = document.querySelector('.sound-icon-off');
         this.equalizer = document.querySelector('.equalizer');
+        this.soundContainer = document.querySelector('.sound-container');
         this.switch = true;
         this.event();
     }
@@ -21,6 +22,7 @@ class Player {
     }
 
     play() {
+        this.soundContainer.style.position = "fixed"
         this.equalizer.style.display = "block";
         this.soundStatus.className ='sound-icon-on';
         this.sound.play();
@@ -28,6 +30,7 @@ class Player {
     }
 
     pause() {
+        this.soundContainer.style.position = "static"
         this.equalizer.style.display = "none";
         this.soundStatus.className ='sound-icon-off';
         this.sound.pause();

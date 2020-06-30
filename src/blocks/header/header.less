@@ -59,7 +59,7 @@
 
         .icon-menu {
             display: flex;
-            // flex-grow: 0;
+            position: relative;
             font-family: 'BIRTH_OF_A_HERO';
             color: @text-color;
             
@@ -78,8 +78,8 @@
             }
 
             .language-menu {
-                // position: absolute;
-                // right: 18%;
+                position: absolute;
+                margin-left: calc(100% - 120px);
                 background-color: @background-color-text;
                 text-align: center;
                 padding: 0;
@@ -101,7 +101,9 @@
                 height: 70px;
             }
 
-            .sound-container {
+            .sound-container { 
+               position: fixed;
+               margin-left: 100px;
 
                 .sound-icon-on {
                     margin-top: 16px;
