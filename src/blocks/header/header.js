@@ -30,7 +30,7 @@ class Player {
     }
 
     pause() {
-        this.soundContainer.style.position = "static"
+        this.soundContainer.style.position = "absolute"
         this.equalizer.style.display = "none";
         this.soundStatus.className ='sound-icon-off';
         this.sound.pause();

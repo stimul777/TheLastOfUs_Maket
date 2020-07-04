@@ -50,7 +50,6 @@ const cssLoaders = extra => {
     return loaders;
 }
 
-
 module.exports = {
     // папка входа
     context: path.resolve(__dirname, 'src'),
@@ -144,6 +143,7 @@ module.exports = {
                 loader: {
                     loader: 'babel-loader',
                     options: {
+                        //конфигурация babel
                         presets: [
                             "@babel/preset-env"
                         ]

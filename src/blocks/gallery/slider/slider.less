@@ -1,14 +1,25 @@
 .slider {
     display: flex;
+    position: relative;
     margin-top: 5%;
-    max-width: 100vw;
+    margin-bottom: 5%;
+    width: 400px;
+    
 
-    .slider-img {
-        display: none;
-        height: 300px;
-        width: 100%;
-        min-width: 720px;
+    .slider__content {
+        display: flex;
+        overflow: hidden;
+        border: 1px solid red;
+
+        .slider-img {
+            height: 300px;
+            width: 300px;
+            transition: margin-left 250ms;
+            // min-width: 720px;
+        }
     }
+
+    
 
     .slider-switch__btn {
         // background-color: red;

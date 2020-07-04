@@ -1,0 +1,6 @@
+//Линтер
+{
+    //рекомендованые стандарты
+    // "extends": "eslint:recommended",
+    "paser": "babel-eslint"
+}
