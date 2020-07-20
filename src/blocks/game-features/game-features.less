@@ -1,8 +1,10 @@
 .game-features {
-    background-image: url(/src/blocks/game-features/img/background.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 100%;
+    position: relative;
+    // background-image: url(/src/blocks/game-features/img/background.jpg);
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // background-position: 100%;
+    background-color: pink;
     min-height: 100vh;
 
     .game-features-wrapper {
@@ -17,7 +19,14 @@
             .game-features-desc_h2 {
                 margin: 0;
             }
-
         }
+    }
+
+    .video {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        opacity: 10%;
     }
 }
